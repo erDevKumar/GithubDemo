@@ -18,7 +18,7 @@ object Versions {
 
     const val ANDROID_X_CORE="1.7.0"
     const val ANDROID_X_COMPAT="1.4.1"
-    const val ANDROID_MATERIAL="1.6.0";
+    const val ANDROID_MATERIAL="1.6.0"
     const val ANDROID_X_ANNOTATION="1.3.0"
 
     const val ANDROID_X_ACTIVITY_KTX="1.4.0"
@@ -33,5 +33,5 @@ object Versions {
 
     const val GLIDE="4.12.0"
 
-    const val SWIPE_REFRESH_LAYOUT="1.1.0";
+    const val SWIPE_REFRESH_LAYOUT="1.1.0"
 }

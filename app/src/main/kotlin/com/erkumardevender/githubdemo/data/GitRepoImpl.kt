@@ -1,6 +1,5 @@
 package com.erkumardevender.githubdemo.data
 
-import com.erkumardevender.githubdemo.data.models.GitUser
 import com.erkumardevender.githubdemo.data.models.PullRequest
 import com.erkumardevender.githubdemo.domain.GitRepo
 import kotlinx.coroutines.flow.Flow

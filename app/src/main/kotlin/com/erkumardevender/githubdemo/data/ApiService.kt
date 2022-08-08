@@ -1,6 +1,5 @@
 package com.erkumardevender.githubdemo.data
 
-import com.erkumardevender.githubdemo.data.models.GitUser
 import com.erkumardevender.githubdemo.data.models.PullRequest
 import retrofit2.Response
 import retrofit2.http.GET
