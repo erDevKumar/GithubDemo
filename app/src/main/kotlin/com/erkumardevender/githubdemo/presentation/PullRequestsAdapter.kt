@@ -1,5 +1,6 @@
 package com.erkumardevender.githubdemo.presentation
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -25,9 +26,8 @@ class PullRequestsAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     fun clearItems(){
-        val indexToBeNotified=pullRequests.size-1
         pullRequests.clear()
-        notifyItemRangeChanged(0,indexToBeNotified)
+        notifyDataSetChanged()
     }
 
     fun addItems(pullRequests: List<PullRequest>){

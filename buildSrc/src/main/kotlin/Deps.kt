@@ -33,6 +33,8 @@ object Deps {
     const val GLIDE="com.github.bumptech.glide:glide:${Versions.GLIDE}"
     const val GLIDE_ANNOTATION="com.github.bumptech.glide:compiler:${Versions.GLIDE}"
 
+    const val SWIPE_REFRESH_LAYOUT="androidx.swiperefreshlayout:swiperefreshlayout:${Versions.SWIPE_REFRESH_LAYOUT}"
+
 
 
 }

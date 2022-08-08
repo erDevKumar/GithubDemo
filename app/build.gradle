@@ -50,4 +50,6 @@ dependencies {
 
     implementation(Deps.GLIDE)
     kapt(Deps.GLIDE_ANNOTATION)
+
+    implementation(Deps.SWIPE_REFRESH_LAYOUT)
 }

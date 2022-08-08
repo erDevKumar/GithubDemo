@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.erkumardevender.githubdemo.BR
@@ -24,11 +25,17 @@ class ClosedPRListActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         performDataBinding()
         setAdapter()
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            adapter.clearItems()
+            viewModel.fetchClosedPRs(this::onPRsFetched)
+        }
         viewModel.fetchClosedPRs(this::onPRsFetched)
+        binding.swipeRefreshLayout.isRefreshing=true
     }
 
     private fun onPRsFetched(prList: List<PullRequest>){
         adapter.addItems(prList)
+        binding.swipeRefreshLayout.isRefreshing=false
     }
 
     private fun performDataBinding(){
@@ -43,6 +50,8 @@ class ClosedPRListActivity:AppCompatActivity() {
         linearLayoutManager.orientation = RecyclerView.VERTICAL
         binding.pullRequests.layoutManager = linearLayoutManager
         binding.pullRequests.adapter = adapter
+        val itemDecor = DividerItemDecoration(this, RecyclerView.VERTICAL)
+        binding.pullRequests.addItemDecoration(itemDecor)
     }
 
 }

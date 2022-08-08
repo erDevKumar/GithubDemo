@@ -32,4 +32,6 @@ object Versions {
     const val HILT="2.38.1"
 
     const val GLIDE="4.12.0"
+
+    const val SWIPE_REFRESH_LAYOUT="1.1.0";
 }
