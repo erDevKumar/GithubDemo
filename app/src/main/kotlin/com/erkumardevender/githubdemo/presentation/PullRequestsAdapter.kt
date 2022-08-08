@@ -7,9 +7,7 @@ import com.erkumardevender.githubdemo.data.models.PullRequest
 import com.erkumardevender.githubdemo.databinding.ItemPullRequestBinding
 import kotlinx.coroutines.flow.MutableStateFlow
 
-class PullRequestsAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    private val pullRequests=ArrayList<PullRequest>()
+class PullRequestsAdapter(private val pullRequests: ArrayList<PullRequest>) :RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val itemPullRequestBinding=ItemPullRequestBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -25,9 +23,8 @@ class PullRequestsAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     fun clearItems(){
-        val indexToBeNotified=pullRequests.size-1
         pullRequests.clear()
-        notifyItemRangeChanged(0,indexToBeNotified)
+        notifyDataSetChanged()
     }
 
     fun addItems(pullRequests: List<PullRequest>){

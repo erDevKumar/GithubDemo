@@ -13,23 +13,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
-        <ProgressBar
-            android:id="@+id/loader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:visibility="@{pullRequestViewModel.loading?View.VISIBLE:View.GONE}" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/pull_requests"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/item_pull_request"/>
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/pull_requests"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:listitem="@layout/item_pull_request"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
         <TextView
             android:id="@+id/empty_record"
             android:layout_width="wrap_content"
@@ -41,6 +36,6 @@
             android:textSize="18sp"
             android:textColor="@color/black"
             android:text="@string/no_record_found"
-            android:visibility="@{pullRequestViewModel.closedPRList.empty?View.VISIBLE:View.GONE}"/>
+            android:visibility="@{pullRequestViewModel.closedPRList.empty&amp;&amp;!pullRequestViewModel.loading?View.VISIBLE:View.GONE}"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

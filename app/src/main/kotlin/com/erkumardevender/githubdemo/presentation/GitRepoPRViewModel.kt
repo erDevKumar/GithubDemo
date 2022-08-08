@@ -12,7 +12,7 @@ import javax.inject.Inject
 @HiltViewModel
 class GitRepoPRViewModel @Inject constructor(private val fetchClosedPRUseCase: FetchClosedPRUseCase):ViewModel(){
 
-    private var _closedPRList=MutableStateFlow(emptyList<PullRequest>())
+    private var _closedPRList=MutableStateFlow(ArrayList<PullRequest>())
     val closedPRList: StateFlow<List<PullRequest>> get() = _closedPRList
 
     private val _loading=MutableStateFlow(false)
@@ -28,7 +28,7 @@ class GitRepoPRViewModel @Inject constructor(private val fetchClosedPRUseCase: F
                     _loading.value=false
                 }
                 .collect{
-                    _closedPRList.value=it
+                    _closedPRList.value= it as ArrayList<PullRequest>
                     onPRsFetched(it)
                     _loading.value=false
                 }
