@@ -7,8 +7,8 @@ object Deps {
     const val OK_HTTP_CORE="com.squareup.okhttp3:okhttp:${Versions.OK_HTTP}"
     const val OK_HTTP_LOG_INTERCEPTOR="com.squareup.okhttp3:logging-interceptor:${Versions.OK_HTTP}"
 
-    const val CHUCKER="com.github.ChuckerTeam.Chucker:library:${Versions.CHUCKER}"
-    const val CHUCKER_NO_OP="com.github.ChuckerTeam.Chucker:library-no-op:${Versions.CHUCKER}"
+    const val CHUCKER="com.github.chuckerteam.chucker:library:${Versions.CHUCKER}"
+    const val CHUCKER_NO_OP="com.github.chuckerteam.chucker:library-no-op:${Versions.CHUCKER}"
 
     const val KOTLIN="org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN_LIB}"
     const val KOTLIN_COROUTINE_CORE= "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.KOTLIN_COROUTINES}"

@@ -11,7 +11,7 @@ object Versions {
     const val RETROFIT = "2.9.0"
     const val OK_HTTP = "4.9.3"
 
-    const val CHUCKER="3.0.1"
+    const val CHUCKER="3.5.2"
 
     const val KOTLIN_LIB="1.6.21"
     const val KOTLIN_COROUTINES="1.4.1"
