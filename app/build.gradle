@@ -34,12 +34,20 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    dataBinding {
+        //noinspection DataBindingWithoutKapt
+        enabled = true
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':core')
+
     implementation(Deps.HILT_ANDROID)
     kapt (Deps.HILT_COMPILER)
+
+    implementation(Deps.GLIDE)
+    kapt(Deps.GLIDE_ANNOTATION)
 }
