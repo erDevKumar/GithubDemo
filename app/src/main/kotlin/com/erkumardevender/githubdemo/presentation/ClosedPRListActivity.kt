@@ -18,7 +18,7 @@ class ClosedPRListActivity:AppCompatActivity() {
 
     private val viewModel: GitRepoPRViewModel by viewModels()
     private lateinit var binding:ActivityClosedPrsBinding
-    private val adapter=PullRequestsAdapter()
+    private lateinit var adapter:PullRequestsAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +29,10 @@ class ClosedPRListActivity:AppCompatActivity() {
             adapter.clearItems()
             viewModel.fetchClosedPRs(this::onPRsFetched)
         }
-        viewModel.fetchClosedPRs(this::onPRsFetched)
-        binding.swipeRefreshLayout.isRefreshing=true
+        if (savedInstanceState==null) {
+            viewModel.fetchClosedPRs(this::onPRsFetched)
+            binding.swipeRefreshLayout.isRefreshing = true
+        }
     }
 
     private fun onPRsFetched(prList: List<PullRequest>){
@@ -46,6 +48,7 @@ class ClosedPRListActivity:AppCompatActivity() {
     }
 
     private fun setAdapter(){
+        adapter= PullRequestsAdapter(viewModel.closedPRList.value as ArrayList<PullRequest>)
         val linearLayoutManager = LinearLayoutManager(this)
         linearLayoutManager.orientation = RecyclerView.VERTICAL
         binding.pullRequests.layoutManager = linearLayoutManager

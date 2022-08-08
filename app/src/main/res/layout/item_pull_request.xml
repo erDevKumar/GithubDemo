@@ -19,6 +19,7 @@
             android:id="@+id/pr_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:layout_constraintWidth_default="wrap"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/barrier_user"
