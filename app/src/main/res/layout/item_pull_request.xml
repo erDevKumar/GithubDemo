@@ -45,6 +45,7 @@
             android:id="@+id/pr_generation_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constrainedWidth="true"
             app:layout_constraintTop_toTopOf="@id/pr_generation_label"
             app:layout_constraintStart_toEndOf="@id/pr_time_barrier"
             app:layout_constraintEnd_toStartOf="@id/barrier_user"
@@ -56,8 +57,9 @@
             tools:text="May 25, 2022"/>
         <TextView
             android:id="@+id/pr_closing_label"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constrainedWidth="true"
             app:layout_constraintTop_toBottomOf="@id/pr_generation_barrier"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="8dp"
