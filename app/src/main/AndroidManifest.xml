@@ -13,7 +13,7 @@
         android:name="GitDemoApplication"
         android:theme="@style/Theme.GithubDemo"
         tools:targetApi="31" >
-        <activity android:name=".presentation.ClosedPRListActivity"
+        <activity android:name="kotlinLearnings.KotlinGenericsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

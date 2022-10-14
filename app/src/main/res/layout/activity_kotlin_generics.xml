@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="32dp"
+        android:id="@+id/root">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tommy"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="TOMMY"
+            app:layout_constraintWidth_default="wrap"
+            app:layout_constraintHeight_default="wrap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sunil"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sunil"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="SUNIL"
+            app:layout_constraintWidth_default="wrap"
+            app:layout_constraintHeight_default="wrap"
+            app:layout_constraintStart_toEndOf="@id/tommy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
